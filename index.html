@@ -15,13 +15,11 @@
     body { margin: 0; font-family: Inter, system-ui; background: radial-gradient(1000px 600px at 20% -10%, #171739, var(--bg)); color: var(--text); overflow: hidden; }
     a { color: inherit; text-decoration: none; }
 
-    /* Fundo animado com partículas e estrelas */
     canvas#bg { position: fixed; inset: 0; z-index: -2; }
     .stars { position: fixed; inset: 0; pointer-events: none; z-index: -1; }
     .star { position: absolute; width: 2px; height: 2px; background: #c084fc; border-radius: 50%; opacity: 0; animation: twinkle 3s infinite ease-in-out; }
     @keyframes twinkle { 0% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(0.5); } }
 
-    /* Topbar e tabs */
     header { position: sticky; top: 0; z-index: 50; background: #00000070; backdrop-filter: blur(10px); border-bottom: 1px solid #1f1f33; }
     .topbar { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
     .tabs { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -31,7 +29,6 @@
     .profile { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 10px; }
     .logout { font-size: 12px; color: #fca5a5; cursor: pointer; }
 
-    /* Hero (Página inicial) */
     .hero { position: relative; padding: 80px 20px; text-align: center; background: linear-gradient(180deg, #0a0a0f00, #0a0a0f60); }
     .hero-inner { max-width: 1000px; margin: 0 auto; }
     .hero h1 { font-size: 42px; margin: 0; background: linear-gradient(90deg, #fff, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -44,7 +41,6 @@
     .feature h3 { margin: 0 0 6px; font-size: 16px; }
     .feature p { margin: 0; font-size: 13px; color: #9ca3af; }
 
-    /* Container geral */
     .container { max-width: 1200px; margin: 20px auto 110px; padding: 0 20px; }
     .section-title { margin: 8px 0 14px; font-size: 22px; font-weight: 800; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
@@ -59,7 +55,6 @@
     .row { display: flex; justify-content: space-between; align-items: center; }
     .price { font-weight: 800; color: #86efac; }
 
-    /* Dock horizontal pequena */
     .dock { position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%); background: #0d0d20cc; backdrop-filter: blur(10px); border: 1px solid #24244a; border-radius: 16px; padding: 6px 8px; z-index: 40; }
     .dock-scroll { display: flex; gap: 8px; overflow-x: auto; max-width: 92vw; scrollbar-width: thin; scrollbar-color: #333 transparent; }
     .dock-scroll::-webkit-scrollbar { height: 6px; }
@@ -68,7 +63,6 @@
     .dock-item:hover { transform: translateY(-1px); box-shadow: 0 0 12px #7c3aed40; }
     .dock-item.active { outline: 2px solid var(--primary); color: #fff; }
 
-    /* Cupom com animação melhorada */
     .coupon { position: fixed; bottom: 100px; right: 20px; background: #170f2b; border: 1px solid #3b1e72; color: #e9d5ff; border-radius: 14px; box-shadow: 0 10px 24px #0008; padding: 14px 16px; display: none; max-width: 300px; z-index: 45; }
     .coupon.show { display: block; animation: bounceIn .8s ease, pulse 2s infinite; }
     .coupon.hide { animation: fadeOut .5s ease forwards; }
@@ -77,22 +71,13 @@
     .coupon .code { display: inline-block; margin-top: 8px; font-weight: 800; color: #fff; background: var(--primary); padding: 6px 10px; border-radius: 8px; box-shadow: 0 0 8px #7c3aed88; }
     .coupon .close { position: absolute; top: 8px; right: 10px; cursor: pointer; color: #ddd; }
 
-    @keyframes bounceIn {
-      0% { transform: scale(0.6) translateY(40px); opacity: 0; }
-      60% { transform: scale(1.06) translateY(-6px); opacity: 1; }
-      100% { transform: scale(1) translateY(0); }
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px #7c3aed; }
-      50% { box-shadow: 0 0 18px #06b6d4; }
-      100% { box-shadow: 0 0 10px #7c3aed; }
-    }
+    @keyframes bounceIn { 0% { transform: scale(0.6) translateY(40px); opacity: 0; } 60% { transform: scale(1.06) translateY(-6px); opacity: 1; } 100% { transform: scale(1) translateY(0); } }
+    @keyframes pulse { 0% { box-shadow: 0 0 10px #7c3aed; } 50% { box-shadow: 0 0 18px #06b6d4; } 100% { box-shadow: 0 0 10px #7c3aed; } }
     @keyframes fadeOut { to { opacity: 0; transform: translateY(10px) scale(0.98); } }
 
     .page { display: none; }
     .page.active { display: block; }
 
-    /* Login */
     .login-screen { position: fixed; inset: 0; z-index: 100; background: radial-gradient(1000px 600px at 20% -10%, #1b1b3f, #0a0a0f); display: flex; align-items: center; justify-content: center; }
     .login-box { width: 380px; background: #11112a; border: 1px solid #2a2a4d; border-radius: 16px; box-shadow: 0 10px 30px #0007; padding: 20px; text-align: center; }
     .login-box h2 { margin: 0 0 8px; color: #fff; }
@@ -101,12 +86,10 @@
     .login-actions { display: flex; gap: 10px; }
     .small { font-size: 12px; color: #9ca3af; margin-top: 8px; }
 
-    /* Chat */
     #chat-log { font-size: 13px; color: #cbd5e1; padding: 8px; background:#0f1020;border:1px solid #2b2d3a;border-radius:12px;height:300px;overflow:auto; }
     #chat-input { flex:1;padding:10px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#e5e7eb }
     .chat-row { display:flex; gap:8px; margin-top:10px }
 
-    /* Modal de produto */
     #product-modal { display:none; position:fixed; inset:0; background:#0009; backdrop-filter:blur(6px); z-index:200; align-items:center; justify-content:center; }
     #product-modal .box { background:#11112a; border:1px solid #2a2a4d; border-radius:16px; width:420px; max-width:92vw; padding:20px; color:#fff; position:relative; }
     #modal-close { position:absolute; top:10px; right:14px; cursor:pointer; font-size:18px; }
@@ -116,11 +99,9 @@
   </style>
 </head>
 <body>
-  <!-- Fundo animado -->
   <canvas id="bg"></canvas>
   <div class="stars" id="stars"></div>
 
-  <!-- Login -->
   <div class="login-screen" id="login">
     <div class="login-box">
       <h2>Bem-vindo ao ETSTORE</h2>
@@ -134,7 +115,6 @@
     </div>
   </div>
 
-  <!-- Header -->
   <header>
     <div class="topbar">
       <nav class="tabs">
@@ -150,7 +130,6 @@
     </div>
   </header>
 
-  <!-- Página inicial -->
   <section class="page active" id="home">
     <div class="hero">
       <div class="hero-inner">
@@ -186,7 +165,6 @@
     </div>
   </section>
 
-  <!-- Conteúdo principal -->
   <main class="container">
     <section class="page" id="loja">
       <div class="section-title">Loja — Sistemas e Scripts</div>
@@ -237,7 +215,6 @@
     </section>
   </main>
 
-  <!-- Dock -->
   <div class="dock">
     <div class="dock-scroll">
       <div class="dock-item active" data-page="home">🏠</div>
@@ -250,14 +227,12 @@
     </div>
   </div>
 
-  <!-- Cupom -->
   <div class="coupon" id="coupon">
     <span class="close" id="coupon-close">✕</span>
     <h4>NATAL30</h4>
     <p>Use o cupom <span class="code">NATAL30</span> para ganhar 30% de desconto nas suas compras</p>
   </div>
 
-  <!-- Modal de Produto com Cupom e Pix -->
   <div id="product-modal">
     <div class="box">
       <span id="modal-close">✕</span>
@@ -265,12 +240,8 @@
       <h2 id="modal-title"></h2>
       <p id="modal-desc" style="color:#ccc; font-size:14px;"></p>
       <p id="modal-price" style="font-weight:bold; color:#86efac; margin:10px 0;"></p>
-
-      <!-- Campo de cupom -->
       <input id="coupon-input" placeholder="Digite seu cupom" style="width:100%; padding:8px; border-radius:8px; border:1px solid #333; margin-bottom:10px; background:#0b0b20; color:#fff;" />
-
       <button id="pix-btn" class="btn" style="width:100%">Comprar com Pix</button>
-
       <div id="pix-info">
         <p>Use a chave Pix abaixo para pagar:</p>
         <p class="code">31 99203-0624</p>
@@ -280,8 +251,12 @@
     </div>
   </div>
 
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
   <script>
-    // Fundo animado — partículas
+    // Fundo animado
     const canvas = document.getElementById('bg');
     const ctx = canvas.getContext('2d');
     function resize() { canvas.width = innerWidth; canvas.height = innerHeight; }
@@ -289,40 +264,27 @@
     let particles = [];
     function createParticles(n=90) {
       particles = Array.from({ length: n }).map(() => ({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: Math.random()*2+0.5,
-        dx: (Math.random()-0.5)*0.4,
-        dy: (Math.random()-0.5)*0.4,
-        c: `hsla(${Math.random()*360},70%,70%,0.5)`
+        x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*2+0.5,
+        dx: (Math.random()-0.5)*0.4, dy: (Math.random()-0.5)*0.4, c: `hsla(${Math.random()*360},70%,70%,0.5)`
       }));
     }
     function animate() {
       ctx.clearRect(0,0,canvas.width,canvas.height);
       for (const p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-        ctx.fillStyle = p.c; ctx.fill();
-        p.x += p.dx; p.y += p.dy;
-        if (p.x<0||p.x>canvas.width) p.dx*=-1;
-        if (p.y<0||p.y>canvas.height) p.dy*=-1;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fillStyle = p.c; ctx.fill();
+        p.x += p.dx; p.y += p.dy; if (p.x<0||p.x>canvas.width) p.dx*=-1; if (p.y<0||p.y>canvas.height) p.dy*=-1;
       }
       requestAnimationFrame(animate);
     }
     createParticles(); animate();
-
-    // Estrelas piscando
     const stars = document.getElementById('stars');
     for (let i=0;i<60;i++) {
-      const s = document.createElement('div');
-      s.className = 'star';
-      s.style.left = Math.random()*100 + '%';
-      s.style.top = Math.random()*100 + '%';
-      s.style.animationDelay = (Math.random()*3)+'s';
+      const s = document.createElement('div'); s.className = 'star';
+      s.style.left = Math.random()*100 + '%'; s.style.top = Math.random()*100 + '%'; s.style.animationDelay = (Math.random()*3)+'s';
       stars.appendChild(s);
     }
 
-    // Login obrigatório e chat por nickname
+    // Login
     const loginScreen = document.getElementById('login');
     const nickInput = document.getElementById('nick-input');
     const loginBtn = document.getElementById('login-btn');
@@ -332,46 +294,24 @@
     let nick = localStorage.getItem('nick');
 
     function setNick(n) {
-      nick = n.trim();
-      localStorage.setItem('nick', nick);
-      profileEl.childNodes[0].textContent = nick + ' ';
-      loginScreen.style.display = 'none';
-      document.body.style.overflow = 'auto';
+      nick = n.trim(); localStorage.setItem('nick', nick);
+      profileEl.childNodes[0].textContent = nick + ' '; loginScreen.style.display = 'none'; document.body.style.overflow = 'auto';
     }
-    function requireLogin() {
-      document.body.style.overflow = 'hidden';
-      loginScreen.style.display = 'flex';
-    }
+    function requireLogin() { document.body.style.overflow = 'hidden'; loginScreen.style.display = 'flex'; }
     if (!nick) { requireLogin(); } else { setNick(nick); }
-
-    loginBtn.addEventListener('click', () => {
-      const v = (nickInput.value || '').trim();
-      if (!v) { alert('Digite um nickname.'); return; }
-      setNick(v);
-    });
-    randomBtn.addEventListener('click', () => {
-      const v = 'Player_' + Math.floor(Math.random()*9999);
-      setNick(v);
-    });
-    logoutEl.addEventListener('click', () => {
-      localStorage.removeItem('nick');
-      requireLogin();
-    });
+    loginBtn.addEventListener('click', () => { const v = (nickInput.value || '').trim(); if (!v) { alert('Digite um nickname.'); return; } setNick(v); });
+    randomBtn.addEventListener('click', () => { const v = 'Player_' + Math.floor(Math.random()*9999); setNick(v); });
+    logoutEl.addEventListener('click', () => { localStorage.removeItem('nick'); requireLogin(); });
 
     // Dados mock
     const lojaItems = Array.from({ length: 18 }).map((_, i) => ({
       title: ["Painel de Notificações","Recompensa de boas-vindas","Sistema de Lootbox","Fogos de Artifício","Arena PVP","Sistema VIP","Garage Pro","Banco RP","Jobs Pack","Inventory Neon","HUD Futurista","Crafting Plus","Mapa RP","Anticheat","Casino RP","Pets RP","Roupas Anime","Heist System"][i],
       desc: "Recurso premium com integração fácil e suporte completo.",
       price: i % 3 === 0 ? "GRÁTIS" : `R$ ${(i + 1) * 9},90`,
-      tags: ["FiveM","RP","Top"],
-      img: `https://picsum.photos/seed/loja${i}/600/300`
+      tags: ["FiveM","RP","Top"], img: `https://picsum.photos/seed/loja${i}/600/300`
     }));
-    const vendasItems = Array.from({ length: 8 }).map((_, i) => ({
-      title: `Venda #${1000 + i}`, desc: "Cliente satisfeito, entrega feita.", price: `R$ ${(i + 1) * 49},90`, img: `https://picsum.photos/seed/sale${i}/600/300`
-    }));
-    const videosItems = Array.from({ length: 8 }).map((_, i) => ({
-      title: ["Clip insano","Tutorial HUD","Meme RP","Update Loja"][i % 4], desc: "Vídeo curto com highlights divertidos.", img: `https://picsum.photos/seed/video${i}/600/300`
-    }));
+    const vendasItems = Array.from({ length: 8 }).map((_, i) => ({ title: `Venda #${1000 + i}`, desc: "Cliente satisfeito, entrega feita.", price: `R$ ${(i + 1) * 49},90`, img: `https://picsum.photos/seed/sale${i}/600/300` }));
+    const videosItems = Array.from({ length: 8 }).map((_, i) => ({ title: ["Clip insano","Tutorial HUD","Meme RP","Update Loja"][i % 4], desc: "Vídeo curto com highlights divertidos.", img: `https://picsum.photos/seed/video${i}/600/300` }));
     const marketItems = [
       { title: "Casa Luxo", type: "Casa", price: "R$ 999,90", img: "https://picsum.photos/seed/casa1/600/300" },
       { title: "Casa Praia", type: "Casa", price: "R$ 799,90", img: "https://picsum.photos/seed/casa2/600/300" },
@@ -387,7 +327,7 @@
       { title: "Synthwave", desc: "Vibe neon futurista.", img: "https://picsum.photos/seed/music2/600/300" }
     ];
 
-    // Render util + click para abrir modal
+    // Render
     function renderGrid(el, items, options = {}) {
       el.innerHTML = items.map((item) => `
         <div class="card">
@@ -408,8 +348,6 @@
         </div>
       `).join('');
     }
-
-    // Render
     function renderAll() {
       const homeDestaques = lojaItems.slice(0, 6);
       renderGrid(document.getElementById('home-grid'), homeDestaques, { cta: "Abrir" });
@@ -421,7 +359,7 @@
     }
     renderAll();
 
-    // Navegação por tabs e dock
+    // Navegação
     function activatePage(pageId) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
@@ -429,47 +367,14 @@
       document.querySelectorAll('.dock-item').forEach(d => d.classList.toggle('active', d.dataset.page === pageId));
       scrollTo(0,0);
     }
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', e => { e.preventDefault(); activatePage(tab.dataset.page); });
-    });
-    document.querySelectorAll('.dock-item').forEach(item => {
-      const page = item.dataset.page;
-      if (!page) return;
-      item.addEventListener('click', () => activatePage(page));
-    });
+    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', e => { e.preventDefault(); activatePage(tab.dataset.page); }));
+    document.querySelectorAll('.dock-item').forEach(item => { const page = item.dataset.page; if (!page) return; item.addEventListener('click', () => activatePage(page)); });
 
-    // Cupom dinâmico — mostra a cada 10s, some com animação
-    const coupon = document.getElementById('coupon');
-    const closeBtn = document.getElementById('coupon-close');
+    // Cupom dinâmico
+    const coupon = document.getElementById('coupon'); const closeBtn = document.getElementById('coupon-close');
     closeBtn.addEventListener('click', () => coupon.className = 'coupon hide');
-    function cycleCoupon() {
-      coupon.className = 'coupon show';
-      setTimeout(() => { coupon.className = 'coupon hide'; }, 6000);
-    }
-    setInterval(cycleCoupon, 10000);
-    cycleCoupon();
-
-    // Chat funcional por nickname
-    const chatLog = document.getElementById('chat-log');
-    const chatInput = document.getElementById('chat-input');
-    const chatSend = document.getElementById('chat-send');
-
-    function appendMessage(user, text) {
-      const msg = document.createElement('div');
-      msg.innerHTML = `<strong>${user}:</strong> ${text}`;
-      chatLog.appendChild(msg);
-      chatLog.scrollTop = chatLog.scrollHeight;
-    }
-
-    chatSend.addEventListener('click', () => {
-      const v = (chatInput.value || '').trim();
-      if (!v) return;
-      appendMessage(nick || 'Visitante', v);
-      chatInput.value = '';
-    });
-    chatInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') chatSend.click();
-    });
+    function cycleCoupon() { coupon.className = 'coupon show'; setTimeout(() => { coupon.className = 'coupon hide'; }, 6000); }
+    setInterval(cycleCoupon, 10000); cycleCoupon();
 
     // Modal de Produto + Cupom + Pix
     function openProduct(title, desc, img, price) {
@@ -483,55 +388,74 @@
       document.getElementById('pix-qr').src = '';
       document.getElementById('final-price').textContent = '';
     }
-
-    document.getElementById('modal-close').onclick = () => {
-      document.getElementById('product-modal').style.display = 'none';
-    };
-
+    document.getElementById('modal-close').onclick = () => { document.getElementById('product-modal').style.display = 'none'; };
     document.getElementById('pix-btn').onclick = () => {
       const couponCode = document.getElementById('coupon-input').value.trim().toUpperCase();
       let priceText = document.getElementById('modal-price').textContent.replace("R$","").replace(",",".");
       let price = parseFloat(priceText) || 0;
-
-      // Aplica desconto se cupom válido
-      if (couponCode === "NATAL30") {
-        price = price * 0.7; // 30% de desconto
-        alert("Cupom aplicado! 30% de desconto.");
-      }
-
-      // Gera QR Code com dados
+      if (couponCode === "NATAL30") { price = price * 0.7; alert("Cupom aplicado! 30% de desconto."); }
       const qrData = `Pix: 31 99203-0624 | Produto: ${document.getElementById('modal-title').textContent} | Valor: R$ ${price.toFixed(2)}`;
       const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(qrData)}`;
-
       document.getElementById('pix-qr').src = qrUrl;
       document.getElementById('final-price').textContent = `Valor final: R$ ${price.toFixed(2)}`;
       document.getElementById('pix-info').style.display = 'block';
     };
 
-    // Bloqueios cosméticos: clique direito, F12, Ctrl+U, Ctrl+S, etc.
-    document.addEventListener('contextmenu', e => {
-      e.preventDefault();
-      alert("Função bloqueada!");
+    // Firebase: configure seu projeto
+    const firebaseConfig = {
+      apiKey: "SUA_CHAVE_API",
+      authDomain: "SEU_PROJETO.firebaseapp.com",
+      databaseURL: "https://SEU_PROJETO-default-rtdb.firebaseio.com",
+      projectId: "SEU_PROJETO",
+      storageBucket: "SEU_PROJETO.appspot.com",
+      messagingSenderId: "ID_MENSAGERIA",
+      appId: "SEU_APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // Chat em tempo real com Firebase
+    const chatLog = document.getElementById('chat-log');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+
+    function renderMessage({ user, text, time }) {
+      const d = new Date(time);
+      const hh = String(d.getHours()).padStart(2,'0');
+      const mm = String(d.getMinutes()).padStart(2,'0');
+      const el = document.createElement('div');
+      el.innerHTML = `<strong>${user}</strong> <span style="color:#9ca3af;font-size:12px">(${hh}:${mm})</span>: ${text}`;
+      chatLog.appendChild(el);
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }
+
+    // Escuta mensagens novas
+    db.ref("messages").on("child_added", snapshot => {
+      const msg = snapshot.val();
+      renderMessage(msg);
     });
 
+    // Envia mensagem
+    chatSend.addEventListener('click', () => {
+      const v = (chatInput.value || '').trim();
+      if (!v) return;
+      const msg = { user: nick || 'Visitante', text: v, time: Date.now() };
+      db.ref("messages").push(msg);
+      chatInput.value = '';
+    });
+    chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') chatSend.click(); });
+
+    // Bloqueios cosméticos
+    document.addEventListener('contextmenu', e => { e.preventDefault(); alert("Função bloqueada!"); });
     document.addEventListener('keydown', e => {
       const key = e.key.toLowerCase();
-      if (
-        e.key === "F12" ||
-        (e.ctrlKey && e.shiftKey && (key === "i" || key === "j")) ||
-        (e.ctrlKey && key === "u") ||
-        (e.ctrlKey && key === "s")
-      ) {
-        e.preventDefault();
-        alert("Ação bloqueada!");
-        window.location.href = "about:blank";
+      if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (key === "i" || key === "j")) || (e.ctrlKey && key === "u") || (e.ctrlKey && key === "s")) {
+        e.preventDefault(); alert("Ação bloqueada!"); window.location.href = "about:blank";
       }
     });
-
     setInterval(() => {
       if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
-        alert("Você foi desconectado por tentar inspecionar!");
-        window.location.href = "about:blank";
+        alert("Você foi desconectado por tentar inspecionar!"); window.location.href = "about:blank";
       }
     }, 1000);
   </script>
